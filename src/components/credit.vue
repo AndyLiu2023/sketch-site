@@ -1,7 +1,7 @@
 <script setup>
 import {ref} from 'vue';
-import { galleryData } from '../../apiconnect/imgManagement';
-import { galleryDataDog } from '../../apiconnect/imgManagement';
+import { galleryData } from '../assets/apiconnect/imgManagement';
+import { galleryDataDog } from '../assets/apiconnect/imgManagement';
 
 const uniqueGalleryData = ref([]); //變數，移除重複物件後儲存用
 const creditUl = ref(null); 

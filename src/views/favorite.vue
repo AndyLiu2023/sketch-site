@@ -1,7 +1,7 @@
 <script setup>
 
 import { ref } from 'vue';
-import Token from '../../apiconnect/checkToken.js';
+import Token from '../assets/apiconnect/checkToken.js';
 
 
 Token.getToken();

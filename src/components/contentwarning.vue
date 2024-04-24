@@ -1,6 +1,6 @@
 <script setup>
 import {ref} from 'vue';
-import Token from '../../apiconnect/checkToken.js';
+import Token from '../assets/apiconnect/checkToken';
 
 const agreeChecked = ref(true); //已確認過使用者同意
 

@@ -1,9 +1,9 @@
 <script setup>
 import { ref } from 'vue';
-import Token from '../../apiconnect/checkToken.js';
-import {getImg} from '../../apiconnect/imgManagement.js';
-import {shuffle} from '../../apiconnect/imgManagement.js';
-import {dogMode} from '../../apiconnect/imgManagement.js';
+import Token from '../assets/apiconnect/checkToken.js';
+import {getImg} from '../assets/apiconnect/imgManagement.js';
+import {shuffle} from '../assets/apiconnect/imgManagement.js';
+import {dogMode} from '../assets/apiconnect/imgManagement.js';
 
 Token.getToken();
 
