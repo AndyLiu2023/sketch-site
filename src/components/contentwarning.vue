@@ -5,6 +5,7 @@ import Token from '../../apiconnect/checkToken.js';
 const agreeChecked = ref(true); //已確認過使用者同意
 
 
+//使用者同意瀏覽網站內容，將 cookie agree 設為 true
 async function agree(){
     document.cookie = 'agree=true';
  
@@ -14,6 +15,7 @@ async function agree(){
 
 }
 
+//使用者同意瀏覽網站內容，將 cookie agree 設為 false
 async function disagree(){
     document.cookie = 'agree=false';
 
@@ -24,7 +26,7 @@ async function disagree(){
 
 
 
-//// check agreement
+//// 確認目前 cookie agree 的值
 
 const checkAgree = () => {
 
@@ -42,6 +44,8 @@ if(!currentAgree.includes(agreeValue)){
 
 
 }
+
+//進首頁時，確認目前 cookie agree 的值
 
 checkAgree();
 

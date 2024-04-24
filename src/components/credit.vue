@@ -3,11 +3,11 @@ import {ref} from 'vue';
 import { galleryData } from '../../apiconnect/imgManagement';
 import { galleryDataDog } from '../../apiconnect/imgManagement';
 
-const uniqueGalleryData = ref([]);
-const creditUl = ref(null);
+const uniqueGalleryData = ref([]); //變數，移除重複物件後儲存用
+const creditUl = ref(null); 
 const creditLi = ref(null);
 
-const galleryDataMix = [...galleryData, ... galleryDataDog];
+const galleryDataMix = [...galleryData, ... galleryDataDog]; //合併兩個人 / 狗 陣列
 
 
 // 把 galleryData 重複的作者名與帳號連結移除，因為同個作者有不同資料夾
