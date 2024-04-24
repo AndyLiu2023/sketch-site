@@ -45,7 +45,8 @@ async function fetchImgData(index, token){
     method: 'GET',
     headers: {
         'Content-Type': 'application/json'
-    }
+    },
+    credentials: 'include'
    });
 
 

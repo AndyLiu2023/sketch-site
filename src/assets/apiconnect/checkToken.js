@@ -25,7 +25,8 @@ const DA = {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
-        }
+        },
+        credentials: 'include'
     })
     }catch(error){
         console.log('驗證錯誤發生', error);
@@ -38,7 +39,8 @@ const DA = {
             const tokendata = await  fetch(`/theapi/oauth2/token?grant_type=client_credentials&client_id=${DA.clientID}&client_secret=${DA.clientSecret}`, {
                             method: 'POST',
                             headers: {
-                            'Content-Type': 'application/json' }
+                            'Content-Type': 'application/json' },
+                            credentials: 'include'
                      })
             const generatedToken = await tokendata.json();
             document.cookie = 'Token=' + generatedToken.access_token;
