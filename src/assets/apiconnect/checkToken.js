@@ -21,7 +21,7 @@ const DA = {
 
     try{
 
-       checkResult = await fetch(`/DAapi/api/v1/oauth2/placebo?access_token=${currentToken}`, {
+       checkResult = await fetch(`https://www.deviantart.com/api/v1/oauth2/placebo?access_token=${currentToken}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -35,7 +35,7 @@ const DA = {
    if(!checkResult.ok){
         
         try{
-            const tokendata = await  fetch(`/DAapi/oauth2/token?grant_type=client_credentials&client_id=${DA.clientID}&client_secret=${DA.clientSecret}`, {
+            const tokendata = await  fetch(`https://www.deviantart.com/oauth2/token?grant_type=client_credentials&client_id=${DA.clientID}&client_secret=${DA.clientSecret}`, {
                             method: 'POST',
                             headers: {
                             'Content-Type': 'application/json' }
