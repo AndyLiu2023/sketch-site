@@ -14,15 +14,15 @@ export default defineConfig({
     }
   },
   server: {
-    proxy: {
-      '/theapi': {
-        target: 'https://www.deviantart.com/',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/theapi/, '')
-    }
+    // proxy: {
+    //   '/theapi': {
+    //     target: 'https://www.deviantart.com/',
+    //     changeOrigin: true,
+    //     rewrite: (path) => path.replace(/^\/theapi/, '')
+    // }
       
       
-    },
+    // },
   },
 
 })
