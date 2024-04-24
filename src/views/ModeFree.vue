@@ -42,6 +42,7 @@ async function fetchImg(){
         if(imgStockDA.value.length > 0){
 
             const newBatchImg  = await getImg();
+            
             shuffle(newBatchImg);
 
             newBatchImg.forEach(element => {
@@ -56,6 +57,7 @@ async function fetchImg(){
         }else{
 
             imgStockDA.value = await getImg();
+            console.log('imgStockDA:' + imgStockDA.value);
            
             shuffle(imgStockDA.value);
 
