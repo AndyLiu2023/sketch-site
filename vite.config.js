@@ -18,7 +18,7 @@ export default defineConfig({
       '/DAapi': {
         target: 'https://www.deviantart.com/',
         changeOrigin: true,
-        '^/DAapi': '/'
+        rewrite: (path) => path.replace(/^\/DAapi/, '')
     }
       
       
