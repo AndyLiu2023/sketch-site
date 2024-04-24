@@ -49,6 +49,7 @@ async function fetchImgData(index, token){
     credentials: 'include'
    });
 
+   console.log('fetchImgData:'+ response.json());
 
    if(!response.ok){
 
@@ -132,6 +133,8 @@ export async function getImg(){
             offsetNum = getRndInteger(0, folderMaxSize); //隨機抽開始順位，如 5 的話，就是從第五張開始。
 
             imgData = await fetchImgData(c, token); //fetch 原始 data
+
+            console.log('ImgData:'+ imgData);
 
             //因資料夾照片數量不同，若是回傳張數不足，需要重新 fetch
 
