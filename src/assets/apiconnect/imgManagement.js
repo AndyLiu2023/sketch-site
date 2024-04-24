@@ -46,10 +46,10 @@ async function fetchImgData(index, token){
     headers: {
         'Content-Type': 'application/json'
     },
-    credentials: 'include'
+
    });
 
-   console.log('fetchImgData:'+ response.json());
+
 
    if(!response.ok){
 

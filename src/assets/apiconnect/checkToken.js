@@ -26,7 +26,7 @@ const DA = {
         headers: {
             'Content-Type': 'application/json'
         },
-        credentials: 'include'
+       
     })
     }catch(error){
         console.log('驗證錯誤發生', error);
@@ -40,7 +40,7 @@ const DA = {
                             method: 'POST',
                             headers: {
                             'Content-Type': 'application/json' },
-                            credentials: 'include'
+                           
                      })
             const generatedToken = await tokendata.json();
             document.cookie = 'Token=' + generatedToken.access_token;
