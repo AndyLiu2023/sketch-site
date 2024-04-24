@@ -49,8 +49,8 @@ function Carouselnavi(positive = true){
     <div>
     <ul class="credit-ul" ref="creditUl">
        <li v-for="data in uniqueGalleryData" class="credit-li" ref="creditLi">
-        <div class="avatar-div"><img src="../../assets/deviantart_logo_icon.png" alt=""></div>
-        <h4>{{ data.artist }}<span v-if= data.dog > &nbsp;<img src="../../assets/pawprint.png" alt=""></span></h4>
+        <div class="avatar-div"><img src="../assets/marterials/deviantart_logo_icon.png" alt=""></div>
+        <h4>{{ data.artist }}<span v-if= data.dog > &nbsp;<img src="../assets/marterials/pawprint.png" alt=""></span></h4>
         <button class="author-button" :href= data.src> 前往作者 DA </button>
 
        </li>
@@ -146,4 +146,4 @@ function Carouselnavi(positive = true){
 }
 
 
-</style>
+</style>../assets/apiconnect/imgManagement../assets/apiconnect/imgManagement

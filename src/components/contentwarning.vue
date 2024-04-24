@@ -108,4 +108,4 @@ checkAgree();
 }
 
 
-</style>
+</style>../assets/apiconnect/checkToken.js

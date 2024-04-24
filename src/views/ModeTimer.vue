@@ -87,7 +87,7 @@ function pauseTimer(){
 
 function playNotification(){
 
-    const notiSound = new Audio('../../assets/notification_sound.wav');
+    const notiSound = new Audio('../assets/marterials/notification_sound.wav');
     notiSound.loop = false;
     notiSound.play(); 
 
@@ -380,3 +380,4 @@ checkDogMode();
 
 
 
+../assets/apiconnect/checkToken.js../assets/apiconnect/imgManagement.js../assets/apiconnect/imgManagement.js../assets/apiconnect/imgManagement.js
