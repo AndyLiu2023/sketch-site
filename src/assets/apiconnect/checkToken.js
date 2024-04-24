@@ -22,6 +22,7 @@ const DA = {
     try{
 
        checkResult = await fetch(`/theapi/api/v1/oauth2/placebo?access_token=${currentToken}`, {
+        credentials: 'include',
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -37,6 +38,7 @@ const DA = {
         
         try{
             const tokendata = await  fetch(`/theapi/oauth2/token?grant_type=client_credentials&client_id=${DA.clientID}&client_secret=${DA.clientSecret}`, {
+                            credentials: 'include',            
                             method: 'POST',
                             headers: {
                             'Content-Type': 'application/json' },

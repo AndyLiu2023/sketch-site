@@ -42,6 +42,7 @@ async function fetchImgData(index, token){
   console.log(randomPickFolder);
 
   let response = await fetch (`/theapi/api/v1/oauth2/gallery/${randomPickFolder[index].folder}?username=${randomPickFolder[index].artist}&mode=newest&offset=${offsetNum}&limit=20&mature_content=true&access_token=${token}`, {
+    credentials: 'include',
     method: 'GET',
     headers: {
         'Content-Type': 'application/json'
