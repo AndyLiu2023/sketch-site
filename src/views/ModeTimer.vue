@@ -5,6 +5,7 @@ import {getImg} from '../assets/apiconnect/imgManagement.js';
 import {shuffle} from '../assets/apiconnect/imgManagement.js';
 import {dogMode} from '../assets/apiconnect/imgManagement.js';
 
+import Sound from "@/assets/marterials/notification_sound.wav";
 
 Token.getToken();
 
@@ -88,7 +89,7 @@ function pauseTimer(){
 
 function playNotification(){
 
-    const notiSound = new Audio('../../notification_sound.wav');
+    const notiSound = new Audio(Sound);
     notiSound.loop = false;
     notiSound.play(); 
 
