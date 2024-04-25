@@ -304,5 +304,4 @@ checkDogMode();
 
 
 
-
-</style>../assets/apiconnect/checkToken.js../assets/apiconnect/imgManagement.js../assets/apiconnect/imgManagement.js../assets/apiconnect/imgManagement.js
+</style>

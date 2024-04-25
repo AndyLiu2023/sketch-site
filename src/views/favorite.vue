@@ -16,8 +16,10 @@ const liked = ref(false);
 
 const likeState = ref('收藏');
 
+const favArrayLength = ref(null);
 
 
+// 取得localStorage 儲存內容
 function getFavorite(){
 
     const key = 'favoriteItem'
@@ -29,8 +31,8 @@ function getFavorite(){
 
 
 favArray.value = getFavorite();
+favArrayLength.value =favArray.value.length;
 
-console.log(favArray.value[0])
 
 
 // 避免lightbox開啟中，視窗大小有變動，導致lightbox不正常關閉，監聽 resize 事件。
@@ -71,23 +73,7 @@ function lightboxOff(){
     likeState.value = '收藏'
 }
 
-// 先在 localstorage 建立一個空陣列，供之後加入元素使用
 
-function initStorage(){
-
-    const key = 'favoriteItem'
-    const value = localStorage.getItem(key);
-
-    if(value == null){
-        const initArray = [];
-        const blankArrayJson = JSON.stringify(initArray);
-
-        localStorage.setItem(key, blankArrayJson);
-
-
-    }
-
-}
 
 // 收藏圖片，將圖片位址加入陣列，存入localstorage
 
@@ -143,7 +129,7 @@ const loading = ref(true) //載入狀態
         <span class="closesign" @click="lightboxOff">&times;</span>
         <button class="favorite" @click="saveToFavorite" :class="{liked: liked}">{{ likeState}}</button>
     </div>
-    <ul  class="gallery-ul" ref="galleryUl">
+    <ul  class="gallery-ul" ref="galleryUl" :class="{ less: favArrayLength < 9}">
 
         <li v-for="img in favArray" class="gallery-li" ref="galleryLi">
             <img  :src="img"   @click="lightboxOn(img)">
@@ -161,10 +147,21 @@ const loading = ref(true) //載入狀態
 
 <style scoped>
 
+.gallery-ul li{
+  width: 90%;
+  margin: 0.5rem auto;
+
+}
+
 
 
 @media (min-width: 800px){
 
+    .gallery-ul li{
+        width: 100%;
+        margin: 0.5rem auto;
+
+    }
 
     .gallery-ul{
         display: grid;
@@ -174,6 +171,9 @@ const loading = ref(true) //載入狀態
         grid-gap: 0.5rem;
     }
 
+    .less{
+        grid-template-columns: repeat(auto-fit, minmax(10%, 10%));
+    }
 
 }
 

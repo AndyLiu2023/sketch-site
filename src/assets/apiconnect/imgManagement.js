@@ -87,7 +87,7 @@ export async function getImg(){
    
     let token = document.cookie;
 
-    console.log(token);
+    
     let imgData = null; //變數，裝回傳的原始 data
     let randomPick = []; // 同個資料夾中，從20張圖隨機挑5張
     let mergedResponse = []; // 蒐集所有資料夾隨機挑好的圖。
@@ -112,7 +112,7 @@ export async function getImg(){
     const a = token.replace(regx, '').trim().slice(6);
     token = a;
 
-    console.log(token);
+   
 
     try{
           randomPickFolder = []; //清空變數內容
@@ -135,7 +135,7 @@ export async function getImg(){
 
             imgData = await fetchImgData(c, token); //fetch 原始 data
 
-            console.log('ImgData:'+ imgData);
+           
 
             //因資料夾照片數量不同，若是回傳張數不足，需要重新 fetch
 

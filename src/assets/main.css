@@ -27,7 +27,7 @@ ul{
 }
 
 li{
-  display: grid;
+  display: flex;
 }
 
 #app {
@@ -104,7 +104,6 @@ button:hover{
 
 .gallery-ul li{
   width: 100%;
-
   margin: 0.5rem 0;
 
 }
