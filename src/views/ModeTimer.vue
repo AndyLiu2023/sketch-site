@@ -5,9 +5,18 @@ import {getImg} from '../assets/apiconnect/imgManagement.js';
 import {shuffle} from '../assets/apiconnect/imgManagement.js';
 import {dogMode} from '../assets/apiconnect/imgManagement.js';
 
-import Sound from "@/assets/marterials/notification_sound.wav";
+import Sound from "@/assets/marterials/notification_sound.mp3";
 
 Token.getToken();
+
+const notiSound = new Audio(Sound);
+const soundsrc = ref(notiSound);
+
+
+
+
+
+
 
 
 const loading = ref(false) //載入狀態
@@ -52,6 +61,7 @@ let intervalId = ''; //變數，給倒數功能用(setInterval)
 
                 timer --;
 
+               
                 //剩下 2 時(實際上會是剩 3 秒，播放提醒音效，倒數數字轉為紅色)，
                 if(timer === 2){
                     playNotification();
@@ -87,11 +97,10 @@ function pauseTimer(){
 
 //給倒數結束時，要播放的提醒音效
 
-function playNotification(){
+async function playNotification(){
 
-    const notiSound = new Audio(Sound);
-    notiSound.loop = false;
-    notiSound.play(); 
+    // test.value.loop = false; // 這裡不能寫這行，會變成每次播放音檔時，音檔需重新載入，網速慢的環境會讓音檔延遲
+    soundsrc.value.play(); 
 
 }
 
@@ -120,7 +129,7 @@ async function start(){
 
             imgAdress.value = imgStockDA.value[0].src;
 
-            startTimer(countDown.value);
+            // startTimer(countDown.value);
 
             startButtonmsg.value = '重新抓圖';
 
@@ -162,7 +171,7 @@ function nextImg(){
         i++;
         imgAdress.value = imgStockDA.value[i].src;
         clearInterval(intervalId);
-        startTimer(countDown.value);
+        // startTimer(countDown.value);
     }
     
     
@@ -183,7 +192,7 @@ function preImg(){
         i --;
         imgAdress.value = imgStockDA.value[i].src;
         clearInterval(intervalId);
-        startTimer(countDown.value);
+        // startTimer(countDown.value);
     }
 
 
@@ -253,6 +262,7 @@ checkDogMode();
 </script>
 
 <template>
+
     <div class="title-div">
         <h1>速寫模式</h1>
         <button class="dog-button" v-if="dog" @click="switchDogMode">狗狗 ON</button>
@@ -283,7 +293,7 @@ checkDogMode();
         </div>
         
         <div v-show="imgAdress" class="img-div">
-            <img :src=imgAdress  alt="">
+            <img :src=imgAdress  @load="startTimer(countDown)">
         </div>
        
     </div>
