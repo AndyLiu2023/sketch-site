@@ -65,7 +65,7 @@
 ## 使用工具 ##
 
 - 開發編輯器 - Visual Studio
-- 前端語言 - Vue
+- 前端框架 - Vue
 - 前端語言 - HTML、CSS、Javascript
 - 網站部屬 - linux 主機 (linode)
 - 網頁伺服器設定 - nginx 
